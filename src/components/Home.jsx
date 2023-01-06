@@ -17,7 +17,7 @@ const Home = () => {
           <p className=" text-gray-500 py-4 max-w-md">
           I am Software Engineer with industry experience in building websites and web applications. 
           <br/>
-          I specialize <b>Core Java, J2EE, Spring Boot, JPA repositories, Microservices, Hibernate, Restful Web Services, SQL, Maven, Git, Sonar.</b> <br/>
+          I specialize <span className="text-white"><b>  Core Java, J2EE, Spring Boot, JPA repositories, Microservices, Hibernate, Restful Web Services, SQL, Maven, Git, JavaScript, NodeJS, ReactJs, HTML, CSS.</b> </span><br/>
           Experience in working on object-oriented design and analysis , development , testing and delivery in rapid development environment to achieve timelines.<br/>
           Working on <b>Agile Methodology</b>, I have been developing and testing large and complex enterprise and web applications.
           </p>
