@@ -31,20 +31,20 @@ const Experience = () => {
     {
       id: 6,
       src: node,
-      title: "Node",
-      style: "shadow-purple-400",
+      title: "NodeJS",
+      style: "shadow-green-400",
     },
     {
       id: 8,
       src: mysql,
       title: "MySql",
-      style: "shadow-gray-400",
+      style: "shadow-orange-400", 
     },
     {
       id: 9,
       src: intellij,
       title: "Intellij",
-      style: "shadow-gray-400",
+      style: "shadow-sky-400",
     },
     {
       id: 10,
