@@ -11,3 +11,45 @@
     font-family: 'Raleway', sans-serif;
   }
 }
+
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh
+}
+
+.navBar {
+  /* position: relative; */
+}
+
+.content-container {
+  margin-top: 5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+.fade-in-normal {
+  animation: fadeIn 1.5s ease-in-out forwards;
+  animation-delay: 1.5s;
+  /* Delay the normal text */
+  opacity: 0;
+  /* Start hidden */
+}
+
+.no-animation {
+  animation: none !important;
+}
+
+p.fade-in-normal span.no-animation {
+  animation: none !important;
+}

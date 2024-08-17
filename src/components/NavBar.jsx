@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
+import { NavLink } from "react-router-dom";
+
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
@@ -9,22 +11,31 @@ const NavBar = () => {
     {
       id: 1,
       link: "home",
+      external: true
     },
     {
       id: 2,
       link: "about",
+      external: true
+
     },
-    // {
-    //   id: 3,
-    //   link: "portfolio",
-    // },
+    {
+      id: 3,
+      link: "portfolio",
+      external: false
+
+    },
     {
       id: 4,
       link: "experience",
+      external: true
+
     },
     {
       id: 5,
       link: "contact",
+      external: true
+
     },
   ];
 
@@ -35,14 +46,14 @@ const NavBar = () => {
       </div>
 
       <ul className="hidden md:flex">
-        {links.map(({ id, link }) => (
+        {links.map(({ id, link, external }) => (
           <li
             key={id}
             className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 duration-200"
           >
-            <Link to={link} smooth duration={500}>
+            {external ? <NavLink to={"/" + link} >{link}</NavLink> : <Link to={external ? "/" + link : link} smooth duration={500}>
               {link}
-            </Link>
+            </Link>}
           </li>
         ))}
       </ul>
@@ -65,7 +76,7 @@ const NavBar = () => {
                 onClick={() => setNav(!nav)}
                 to={link}
                 smooth
-                duration={500}
+                duration={400}
               >
                 {link}
               </Link>

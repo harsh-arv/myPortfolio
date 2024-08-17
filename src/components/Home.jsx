@@ -2,24 +2,32 @@ import React from "react";
 import HeroImage from "../assets/heroImage.png";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-scroll";
+import About from "./About";
+import { calculateYearsAndMonths } from "../constants/constantFunction";
 
 const Home = () => {
-  return ( 
+  const experience = calculateYearsAndMonths(new Date('2021-08-23'));
+
+  return (
     <div
       name="home"
       className="h-screen w-full bg-gradient-to-b from-black via-black to-gray-800"
     >
-      <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
-        <div className="flex flex-col justify-center h-full">
-          <h2 className="pt-10 text-4xl sm:text-7xl font-bold text-white">
+      <div className="flex flex-col items-center justify-center px-4 md:flex-row">
+        <div className="flex flex-col justify-center">
+          <h2 className="pt-10 text-4xl sm:text-7xl font-bold text-white  py-4 ">
             I'm a Full Stack Developer
           </h2>
-          <p className=" text-gray-500 py-4 max-w-md">
-          I am Software Engineer with industry experience in building websites and web applications. 
-          <br/>
-          I specialize <span className="text-white"><b>  Core Java, Spring Boot, JPA repositories, Microservices, Hibernate, SQL, JavaScript, NodeJS, ReactJs, HTML, CSS, Maven, Git.</b> </span><br/>
-          Experience in working on object-oriented design and analysis , development , testing and delivery in rapid development environment to achieve timelines.<br/>
-          Working on <b>Agile Methodology</b>, I have been developing and testing large and complex enterprise and web applications.
+          <p className="fade-in-normal text-gray-500 max-w-md">
+            I am Software Engineer with industry experience of
+            <span className="text-white  no-animation" style={{ animation: 'none' }}> <b >{experience.years} years </b> and <b>{experience.months} month{experience.months > 1 ? 's' : ''} </b>  </span>
+            building websites and web applications.
+          </p>
+          <p className="text-gray-500 max-w-md">
+            I specialize <span className="text-white"><b>Core Java, Spring Boot, JPA repositories, Microservices, Hibernate, SQL, JavaScript, NodeJS, ReactJs, HTML, CSS, Maven, Git.</b></span>
+          </p>
+          <p className="fade-in-normal  text-gray-500 max-w-md">
+            Experience in working on object-oriented design and analysis, development, testing, and delivery in a rapid development environment to achieve timelines. Working on <b>Agile Methodology</b>, I have been developing and testing large and complex enterprise and web applications.
           </p>
 
           <div>

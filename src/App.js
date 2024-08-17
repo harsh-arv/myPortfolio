@@ -6,18 +6,20 @@ import NavBar from "./components/NavBar";
 import Portfolio from "./components/Portfolio";
 import SocialLinks from "./components/SocialLinks";
 import Footer from "./components/Footer";
+import NavigationRouter from "./components/NavigationRouter";
+
 
 function App() {
   return (
-    <div>
-      <NavBar />
-      <Home />
-      <About />
-      {/* <Portfolio /> */}
-      <Skill />
-      {/* <Contact /> */}
-      <SocialLinks />
-      <Footer/>
+    <div className="layout">
+      <div className="navBar"> 
+        
+        <NavBar />
+      </div>
+      <div className="content-container">
+        <NavigationRouter />
+      </div>
+      <Footer />
     </div>
   );
 }

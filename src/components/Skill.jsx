@@ -13,7 +13,7 @@ import intellij from "../assets/intellij.png"
 import node from "../assets/node.png"
 
 
-const Experience = () => {
+const Skill = () => {
   const backTechs = [
     {
       id: 6,
@@ -21,7 +21,7 @@ const Experience = () => {
       title: " Core Java",
       style: "shadow-purple-400",
     },
-    
+
     {
       id: 7,
       src: spring,
@@ -38,7 +38,7 @@ const Experience = () => {
       id: 8,
       src: mysql,
       title: "MySql",
-      style: "shadow-orange-400", 
+      style: "shadow-orange-400",
     },
     {
       id: 9,
@@ -52,8 +52,8 @@ const Experience = () => {
       title: "GitHub",
       style: "shadow-gray-400",
     },
-    
-    
+
+
   ];
   const frntTechs = [
     {
@@ -103,7 +103,7 @@ const Experience = () => {
         </div>
 
         <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
-          
+
           {backTechs.map(({ id, src, title, style }) => (
             <div
               key={id}
@@ -120,7 +120,7 @@ const Experience = () => {
         </div>
 
         <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
-          
+
           {frntTechs.map(({ id, src, title, style }) => (
             <div
               key={id}
@@ -136,4 +136,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Skill;
