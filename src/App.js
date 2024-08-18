@@ -12,14 +12,14 @@ import NavigationRouter from "./components/NavigationRouter";
 function App() {
   return (
     <div className="layout">
-      <div className="navBar"> 
-        
+      <div className="navBar">
+
         <NavBar />
       </div>
       <div className="content-container">
         <NavigationRouter />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

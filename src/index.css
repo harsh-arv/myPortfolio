@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,23 +8,42 @@
 
 @layer base {
   html {
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
+    height: 100%;
+    margin: 0;
   }
 }
-
 
 .layout {
   display: flex;
   flex-direction: column;
-  height: 100vh
+  height: 100vh;
+  /* Ensures the layout takes up the full viewport height */
+  box-sizing: border-box;
+  /* height: 100vh;
+  padding: 2rem; */
+  /* background-color: red; */
+  overflow: auto;
+  background: linear-gradient(to bottom, black, black, #2d2d2d);
+}
+
+.skill-container {
+  .skill-img-container {
+    margin: 10px;
+  }
+  .heading {
+    font-size: x-large;
+  }
 }
 
 .navBar {
   /* position: relative; */
+  z-index: 1;
 }
 
 .content-container {
-  margin-top: 5rem;
+  margin: 5rem 2rem 0rem 2rem;
+  /* overflow: auto; */
 }
 
 @keyframes fadeIn {
@@ -37,19 +56,73 @@
   }
 }
 
+.about-img-container {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  align-items: center;
+  justify-content: space-between;
 
-.fade-in-normal {
-  animation: fadeIn 1.5s ease-in-out forwards;
-  animation-delay: 1.5s;
-  /* Delay the normal text */
-  opacity: 0;
-  /* Start hidden */
+  .image-container {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+
+    img {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+    }
+  }
 }
 
-.no-animation {
-  animation: none !important;
+.stack-containter {
+  width: 60%;
+  > p {
+    font-size: x-large;
+  }
+  .fade-in-normal {
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 1s;
+    opacity: 0;
+  }
+
+  .no-animation {
+    animation: none !important;
+  }
+
+  p.fade-in-normal span.no-animation {
+    animation: none !important;
+  }
 }
 
-p.fade-in-normal span.no-animation {
-  animation: none !important;
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.portfolio-button {
+  display: inline-block; /* Ensures proper scaling */
+}
+
+.portfolio-button .group {
+  animation: zoomInOut 2s infinite; /* 2s duration, infinitely repeating */
+}
+
+.contact-container {
+  margin: 2rem ;
+  
+  .form-container {
+    margin-left: 4rem;
+  }
 }

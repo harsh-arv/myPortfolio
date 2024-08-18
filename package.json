@@ -1,12 +1,13 @@
 {
   "name": "myPortfolio",
-  "homepage": "https://harsh-arv.github.io/myPortfolio",
+  "homepage": "https://harsh-arv.github.io/myPortfolio/home",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "animate.css": "^4.1.1",
     "install": "^0.13.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
