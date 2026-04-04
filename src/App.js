@@ -13,7 +13,6 @@ function App() {
       <NavBar />
       <Home />
       <About />
-      {/* <Portfolio /> */}
       <Skill />
       {/* <Contact /> */}
       <SocialLinks />
