@@ -46,7 +46,7 @@ const SpotifyLogo = () => (
 );
 
 const DefaultLogo = () => (
-  <h1 className="text-4xl md:text-5xl font-signature ml-2 text-t-primary">
+  <h1 className="text-2xl sm:text-4xl md:text-5xl font-signature ml-2 text-t-primary">
     Harsh Gandharv
   </h1>
 );

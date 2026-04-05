@@ -24,16 +24,23 @@ const NavBar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll when mobile nav is open
+  useEffect(() => {
+    document.body.style.overflow = nav ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [nav]);
+
   return (
-    <div
-      className={`flex justify-between items-center w-full h-20 px-4 text-t-text fixed z-50 transition-all duration-300 ${
+    <nav
+      className={`flex justify-between items-center w-full h-16 sm:h-20 px-4 sm:px-6 text-t-text fixed z-50 transition-all duration-300 ${
         scrolled ? "bg-t-nav-scroll shadow-lg" : "bg-t-nav"
       }`}
     >
-      <div>
+      <div className="flex-shrink-0">
         <BrandLogo />
       </div>
 
+      {/* Desktop nav */}
       <ul className="hidden md:flex">
         {links.map(({ id, link, label }) => (
           <li key={id}
@@ -45,25 +52,31 @@ const NavBar = () => {
         ))}
       </ul>
 
-      <div onClick={() => setNav(!nav)}
-        className="cursor-pointer pr-4 z-10 text-t-text-secondary md:hidden hover:text-t-accent transition-colors">
-        {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
-      </div>
+      {/* Mobile hamburger */}
+      <button onClick={() => setNav(!nav)} aria-label="Toggle menu"
+        className="cursor-pointer pr-2 z-[60] text-t-text-secondary md:hidden hover:text-t-accent transition-colors">
+        {nav ? <FaTimes size={24} /> : <FaBars size={24} />}
+      </button>
 
-      {nav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-t-nav text-t-text-secondary">
-          {links.map(({ id, link, label }) => (
-            <li key={id}
-              className="px-4 cursor-pointer py-6 text-3xl hover:text-t-accent transition-colors">
-              <Link onClick={() => setNav(!nav)} to={link} smooth duration={500} spy={true}
-                activeClass="!text-t-accent font-bold">
+      {/* Mobile slide-in menu */}
+      <div className={`fixed inset-0 z-[55] md:hidden transition-all duration-300 ${nav ? "visible" : "invisible"}`}>
+        {/* Backdrop */}
+        <div className={`absolute inset-0 bg-black/60 transition-opacity duration-300 ${nav ? "opacity-100" : "opacity-0"}`}
+          onClick={() => setNav(false)} />
+        {/* Slide panel */}
+        <div className={`absolute top-0 right-0 w-72 h-full bg-t-nav shadow-2xl transform transition-transform duration-300 ${nav ? "translate-x-0" : "translate-x-full"}`}>
+          <div className="flex flex-col pt-20 px-6">
+            {links.map(({ id, link, label }) => (
+              <Link key={id} onClick={() => setNav(false)} to={link} smooth duration={500} spy={true}
+                activeClass="!text-t-accent !border-t-accent"
+                className="py-4 text-lg font-medium text-t-text-secondary hover:text-t-accent border-b border-t-border/30 transition-colors cursor-pointer">
                 {label}
               </Link>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 };
 

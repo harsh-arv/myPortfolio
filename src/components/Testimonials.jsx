@@ -42,10 +42,10 @@ const Testimonials = () => {
   return (
     <div
       name="testimonials"
-      className="w-full text-t-text min-h-screen"
+      className="w-full text-t-text"
       style={{ background: "linear-gradient(to bottom, var(--c-bg-base), var(--c-bg-alt))" }}
     >
-      <div className="w-full px-8 md:px-16 lg:px-24 xl:px-32 py-20 flex flex-col justify-center">
+      <div className="w-full px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-20 flex flex-col justify-center">
         <div className="pb-8 text-center">
           <p className="text-4xl font-bold inline border-b-4 border-t-primary">
             {brand.sections.testimonials}

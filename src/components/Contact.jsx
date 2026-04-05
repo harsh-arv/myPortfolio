@@ -47,10 +47,10 @@ const Contact = () => {
   return (
     <div
       name="contact"
-      className="w-full text-t-text min-h-screen"
+      className="w-full text-t-text"
       style={{ background: "linear-gradient(to bottom, var(--c-bg-alt), var(--c-bg-base))" }}
     >
-      <div className="w-full px-8 md:px-16 lg:px-24 xl:px-32 py-20 flex flex-col justify-center">
+      <div className="w-full px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-20 flex flex-col justify-center">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-t-primary">
             {brand.sections.contact}

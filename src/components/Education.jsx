@@ -25,10 +25,10 @@ const Education = () => {
   return (
     <div
       name="education"
-      className="w-full text-t-text min-h-screen"
+      className="w-full text-t-text"
       style={{ background: "linear-gradient(to bottom, var(--c-bg-alt), var(--c-bg-base))" }}
     >
-      <div className="w-full px-8 md:px-16 lg:px-24 xl:px-32 py-20 flex flex-col justify-center">
+      <div className="w-full px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-20 flex flex-col justify-center">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-t-primary">
             {brand.sections.education}
@@ -36,17 +36,17 @@ const Education = () => {
           <p className="py-6 text-t-text-secondary">{brand.sectionSubtitles.education}</p>
         </div>
 
-        <div className="bg-t-card rounded-lg shadow-lg p-8 border border-t-border hover:border-t-primary transition-all duration-300 mb-16">
-          <div className="flex items-start">
+        <div className="bg-t-card rounded-lg shadow-lg p-4 sm:p-8 border border-t-border hover:border-t-primary transition-all duration-300 mb-16">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-0">
             <div className="flex-shrink-0">
-              <div className="w-16 h-16 bg-t-primary rounded-full flex items-center justify-center">
-                <FaGraduationCap className="text-3xl text-white" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-t-primary rounded-full flex items-center justify-center">
+                <FaGraduationCap className="text-2xl sm:text-3xl text-white" />
               </div>
             </div>
-            <div className="ml-6 flex-1">
+            <div className="sm:ml-6 flex-1 text-center sm:text-left">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start">
                 <div>
-                  <h3 className="text-2xl font-bold text-t-text">{education.university}</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-t-text">{education.university}</h3>
                   <p className="text-xl text-t-accent mt-2">{education.degree}</p>
                   <p className="text-lg text-t-text-secondary mt-1">{education.field}</p>
                   <div className="mt-3">

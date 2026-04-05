@@ -142,13 +142,15 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem("portfolio-theme");
-    return saved && themes[saved] ? saved : "default";
+    // Check for saved theme from BrandSelector or previous selections
+    const savedTheme = localStorage.getItem("portfolioTheme") || localStorage.getItem("portfolio-theme");
+    return savedTheme && themes[savedTheme] ? savedTheme : "default";
   });
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("portfolio-theme", theme);
+    localStorage.setItem("portfolioTheme", theme);
+    localStorage.setItem("portfolio-theme", theme); // Keep for backwards compatibility
   }, [theme]);
 
   const brand = brandConfig[theme];

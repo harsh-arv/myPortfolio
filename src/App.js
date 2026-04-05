@@ -15,6 +15,7 @@ import Education from "./components/Education";
 import Testimonials from "./components/Testimonials";
 import BackToTop from "./components/BackToTop";
 import ThemeSwitcher from "./components/ThemeSwitcher";
+import BrandSelector from "./components/BrandSelector";
 import SEO from "./components/SEO";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
     <ThemeProvider>
       <div>
         <SEO />
+        <BrandSelector />
         <NavBar />
         <Home />
         <About />

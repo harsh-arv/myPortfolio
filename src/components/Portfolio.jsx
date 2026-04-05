@@ -218,11 +218,11 @@ const Portfolio = () => {
     }
   };
 
-  const gridClass = theme === "spotify" ? "" : theme === "netflix" ? "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4" : "grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8";
+  const gridClass = theme === "spotify" ? "" : theme === "netflix" ? "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4" : "grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8";
 
   return (
-    <div name="portfolio" className="w-full text-t-text min-h-screen" style={{ background: "linear-gradient(to bottom, var(--c-bg-base), var(--c-bg-alt))" }}>
-      <div className="w-full px-8 md:px-16 lg:px-24 xl:px-32 py-20 flex flex-col justify-center">
+    <div name="portfolio" className="w-full text-t-text" style={{ background: "linear-gradient(to bottom, var(--c-bg-base), var(--c-bg-alt))" }}>
+      <div className="w-full px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-20 flex flex-col justify-center">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-t-primary">{brand.sections.portfolio}</p>
           <p className="py-6 text-t-text-secondary">{brand.sectionSubtitles.portfolio}</p>
