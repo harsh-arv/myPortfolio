@@ -81,7 +81,7 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      company: "Turing",
+      company: "Currently serving the Best Firm in the World",
       role: "Full Stack Developer",
       duration: "October 2024 - Present",
       location: "New Delhi, INDIA",
